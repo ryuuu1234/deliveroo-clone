@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import React from 'react'
+import { View, Text, TextInput } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import COLORS from '../../global/colors'
 
 const Input = ({
@@ -16,9 +16,11 @@ const Input = ({
       <Text>{label}</Text>
       <View className="flex-row items-center space-x-2 bg-gray-200 px-2 py-1 rounded-sm">
         <Icon
-            name="email"
-            className="text-lg"
+          name="email"
+          size={20}
+          color={COLORS.txtgray}
         />
+        <TextInput className="flex-1" placeholder='Restourant Mboh' keyboardType='default' />
       </View>
     </View>
   )
