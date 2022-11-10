@@ -31,43 +31,55 @@ const LoginScreen = props => {
         
     }
     return (
-        <View className="min-h-screen flex flex-col">
-            <AppLoader visible={loading} />
-            <View className="">
-                <LinearGradient
-                    colors={[tw.color('secondary'), tw.color('primary')]}
-                    start={{ x: 1, y: 0 }}
-                    end={{x:1,y:1}}
-                    className="h-64 w-full rounded-tl-[180px] rounded-br-[160px] inset-0 flex justify-center items-center ">
-                    <Image
-                        className="w-16 h-16 mb-2"
-                        source={require("../assets/static/logo-rsud.png")}
-                    />
-                    <Text className="text-white">UOBK RSUD MOHAMMAD SALEH</Text>
-                    <Text className="text-white font-bold text-xl">SIMRS</Text>
-                    <Text className="text-white text-xs">Sistem Informasi Management Rumah Sakit</Text>
-                </LinearGradient>
-            </View>
-            
-            <View className="flex-grow pt-4">
-                <View className="p-8">
-                    <AppInput icon="email" placeholder="Email" />
-                    <AppInput icon="key" placeholder="Password" password/>
-                    <AppBtn label="Login" width="w-full" margin="mt-4"
-                        clicked={() => {
-                            login();
-                        }}
+        <ScrollView>
+            <View className="min-h-screen flex flex-col">
+                <AppLoader visible={loading} />
+                <View className="">
+                    <LinearGradient
+                        colors={[tw.color('secondary'), tw.color('primary')]}
+                        start={{ x: 1, y: 0 }}
+                        end={{x:1,y:1}}
+                        className="h-64 w-full rounded-b-[160px] inset-0 flex justify-center items-center ">
+                        <Image
+                            className="w-16 h-16 mb-2"
+                            source={require("../assets/static/logo-rsud.png")}
+                        />
+                        <Text className="text-white">UOBK RSUD MOHAMMAD SALEH</Text>
+                        <Text className="text-white font-bold text-xl">SIMRS</Text>
+                        <Text className="text-white text-xs">Sistem Informasi Management Rumah Sakit</Text>
+                    </LinearGradient>
+                </View>
+                
+                <View className="flex-grow pt-4">
+                    <View className="p-8">
+                        <View style={tw`py-4 items-center`}>
+                            <Text style={tw`text-xs text-gray`}>Silahkan Anda Login Terlebih dahulu</Text>
+                        </View>
+                        <AppInput icon="email" placeholder="Email" />
+                        <AppInput icon="key" placeholder="Password" password/>
+                        <AppBtn label="Login" width="w-full" margin="mt-4"
+                            clicked={() => {
+                                login();
+                            }}
+                        />
+
+                        <View style={tw`items-center mt-8`}>
+                            <View style={tw`flex flex-row items-center`}>
+                                <Text style={tw`text-xs text-gray`}>Belum Punya Akun?</Text>
+                                <Text style={tw`text-xs text-primary ml-1`}>Register disini</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View className="rounded-tl-full overflow-hidden left-64">
+                    <LinearGradient className="h-24 ring-warning ring-inset"
+                        colors={[tw.color('secondary'), tw.color('primary')]}
+                        start={{ x: 1, y: 0 }}
+                        end={{x:1,y:0.9}}
                     />
                 </View>
             </View>
-            <View className="rounded-tl-full overflow-hidden left-64">
-                <LinearGradient className="h-24 ring-warning ring-inset"
-                    colors={[tw.color('secondary'), tw.color('primary')]}
-                    start={{ x: 1, y: 0 }}
-                    end={{x:1,y:0.9}}
-                />
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 

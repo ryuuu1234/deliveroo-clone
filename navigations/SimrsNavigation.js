@@ -13,6 +13,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 
 import LoginScreen from '../screens/LoginScreen';
+import RegistrationScreen from '../screens/RegistrationScreen'
 import HomeScreen from '../screens/HomeScreen'
 import COLORS from '../global/colors';
 
@@ -57,6 +58,7 @@ const NavigationAuth = () => {
             headerShown:false
         }}
       >
+      <AuthStack.Screen name="RegistrationScreen" component={RegistrationScreen} />
       <AuthStack.Screen name="LoginScreen" component={LoginScreen} />
 
       {/* HOME SCREEN */}

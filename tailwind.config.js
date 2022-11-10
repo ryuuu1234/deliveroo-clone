@@ -56,9 +56,9 @@ module.exports = {
         info      : '#0d6efd',
         warning: '#FFC257',
         
-        white: '#ffffff',
+        white: '#fff',
         'gray': {
-          light: '#e5e7eb',
+          light: '#f1f5f9',
           DEFAULT: '#9ca3af',
           dark: '#4b5563',
         },
